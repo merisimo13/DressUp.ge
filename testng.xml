@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Automation Suite" verbose="1" thread-count="2" parallel="tests" >
+    <test name="TestSuit1" parallel="tests" >
+        <classes>
+            <class name="DressUpRegister" />
+        </classes>
+    </test>
+
+
+
+</suite>
