@@ -1,17 +1,19 @@
 package DressUpOnlineShop.stepsObjects;
 
 import DressUpOnlineShop.pageObject.RegisterPage;
+import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 import org.testng.Assert;
 
-import static com.codeborne.selenide.Selectors.byName;
-import static com.codeborne.selenide.Selenide.$;
+import static DressUpOnlineShop.dataObject.RegisterData.checkProfile;
+import static DressUpOnlineShop.dataObject.RegisterData.emaile;
 
 public class RegisterSteps extends RegisterPage {
 
     @Step ("click login button ")
     public RegisterSteps Login(){
         loginButton.click();
+        Assert.assertEquals(checkProfile,checkText.getText());
         return  this;
     }
 
@@ -55,8 +57,13 @@ public class RegisterSteps extends RegisterPage {
     public RegisterSteps password(String password) {
         paswwordInput.setValue(password);
         return this;
-
     }
+    @Step ("check Email input ")
+    public RegisterSteps checkEmail(){
+        checkEmailInput.shouldHave(Condition.value(emaile));
+        return this;
+    }
+
     @Step ("choose birthday day - {birthdayDay}")
     public RegisterSteps birthdayDAy(String birthdayDay){
         birhdayDayInput.selectOption(birthdayDay);
@@ -89,5 +96,19 @@ public class RegisterSteps extends RegisterPage {
         return this;
 
     }
+    @Step ("check alert message")
+    public RegisterSteps checkAlert(boolean allertExist) {
+        Assert.assertEquals(errorMessage.is(Condition.visible),allertExist);
+        return this;
+
+    }
+    @Step ("click register Button")
+    public RegisterSteps registeButton() {
+        registerButton.click();
+        return this;
+
+    }
+
+
 }
 
