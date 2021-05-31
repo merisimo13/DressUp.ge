@@ -1,16 +1,19 @@
 package DressUpOnlineShop.stepsObjects;
 
 import DressUpOnlineShop.pageObject.NewDressPage;
+import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 import org.testng.Assert;
 
+
 public class NewDressStep extends NewDressPage {
 
-    @Step ("choose geder women")
+    @Step("choose geder women")
     public NewDressStep chooseGenderButton() {
         chooseGEnder_2.click();
         return this;
     }
+
     @Step("choose close for women")
     public NewDressStep chooseClose() {
         chooseClose.click();
@@ -22,38 +25,45 @@ public class NewDressStep extends NewDressPage {
         chooseBrand.click();
         return this;
     }
+
     @Step("choose size M")
     public NewDressStep chooseSize() {
         chooseSize.click();
         return this;
     }
+
     @Step("choose first product")
     public NewDressStep SelectFirstProduct() {
         selectFirstProduct.click();
         return this;
     }
-    @Step ("add product in shoppingcart")
+
+    @Step("add product in shoppingcart")
     public NewDressStep addProduct() {
         addProduct.click();
-        //Assert.assertEquals();
         return this;
     }
-    @Step ("continue shopping page")
+
+    @Step("continue shopping page")
     public NewDressStep backProductPage() {
         backproductpage.click();
         return this;
     }
-    @Step ("go in shopping cart")
+
+    @Step("go in shopping cart")
     public NewDressStep shoppingcart() {
-       shoppingcart.click();
+        shoppingcart.click();
         return this;
     }
+
     @Step("delete product from shopping cart")
     public NewDressStep deleteProduct() {
         deleteProduct.click();
+        Assert.assertEquals(emptyCartWarning.is(Condition.visible),false);
         return this;
     }
-    @Step ("back home page")
+
+    @Step("back home page")
     public NewDressStep backMainPage() {
         backMainPaga.click();
         return this;

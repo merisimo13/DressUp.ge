@@ -1,11 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Automation Suite" verbose="1" thread-count="3" parallel="tests" >
+<suite name="Automation Suite" verbose="1" thread-count="4" parallel="tests" >
     <test name="TestSuit1" parallel="tests" >
         <classes>
             <class name="DressUpRegister" />
         </classes>
     </test>
+
     <test name="TestSuit2" parallel="tests" >
         <classes>
             <class name="DressUpNewDress" />
@@ -14,6 +15,11 @@
     <test name="TestSuit3" parallel="tests" >
         <classes>
             <class name="LogInLogOut" />
+        </classes>
+    </test>
+    <test name="TestSuit4" parallel="tests" >
+        <classes>
+            <class name="CloseForMan" />
         </classes>
     </test>
 

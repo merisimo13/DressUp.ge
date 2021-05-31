@@ -24,7 +24,4 @@ public class RegisterPage {
              errorMessage =$ (".alert-danger"),
              registerButton = $( byName( "submitAccount"));
 
-
-
-
 }

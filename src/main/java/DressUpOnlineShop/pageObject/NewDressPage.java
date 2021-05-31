@@ -14,10 +14,9 @@ public class NewDressPage {
             chooseSize = $("#a-2"),
             selectFirstProduct = $(".product-container"),
             addProduct = $(byName("Submit")),
-           // checkText = $(".layer_cart_title"),
             backproductpage = ($(".continue")),
             shoppingcart = $(".shopping_cart").$(byText("ჩანთა")),
-            productNumber = $("#summary_products_quantity"),
+            emptyCartWarning = $("#emptyCartWarning"),
             deleteProduct = $(".icon-trash"),
             backMainPaga = $("#header_logo");
 }

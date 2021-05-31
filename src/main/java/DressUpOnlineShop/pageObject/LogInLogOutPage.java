@@ -9,12 +9,15 @@ public class LogInLogOutPage {
     public SelenideElement
 
             loginButton_2 = $(".login"),
-            checkText_2 = $("h3"),
             emailInput_2 = $(byName("email")),
             passwordInput_2 = $(byName("passwd")),
             authorizationButton = $(byName("SubmitLogin")),
             checkHelloText = $(".header_user_info").$(byText("გამარჯობა ვახტანგ")),
-            logOutButton = $(".logout");
-
+            logOutButton = $(".logout"),
+            wishListButton = $(".icon-heart-o"),
+            wishListName = $(".inputTxt"),
+            submitWishlist = $(byName("submitWishlist")),
+            wishListBlock = $("#block-history").$(byText("Meri's wish list")),
+            removeWishlist = $(".icon-remove");
 
 }

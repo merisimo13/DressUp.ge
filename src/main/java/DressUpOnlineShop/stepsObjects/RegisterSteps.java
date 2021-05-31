@@ -50,7 +50,6 @@ public class RegisterSteps extends RegisterPage {
     public RegisterSteps idNumber(String idNumber) {
         idNumberInput.setValue(idNumber);
         return this;
-
     }
 
     @Step ("set password veliu - {password}")
@@ -80,14 +79,12 @@ public class RegisterSteps extends RegisterPage {
     public RegisterSteps birthdayYear(String birthdayYear) {
         birthdayYearInput.selectOption(birthdayYear);
         return this;
-
     }
 
     @Step ("click news with email button")
     public RegisterSteps newsWithEmail() {
         newsWithEmail.click();
         return this;
-
     }
 
     @Step ("click news with sms button")

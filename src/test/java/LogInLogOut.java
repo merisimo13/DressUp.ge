@@ -6,8 +6,9 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.testng.annotations.Test;
 
-import static DressUpOnlineShop.dataObject.LogInLogOutData.emaile_2;
-import static DressUpOnlineShop.dataObject.LogInLogOutData.pass;
+import java.awt.*;
+
+import static DressUpOnlineShop.dataObject.LogInLogOutData.*;
 
 public class LogInLogOut extends ChromeRunner {
     @Test(retryAnalyzer = Retry.class)
@@ -26,4 +27,26 @@ public class LogInLogOut extends ChromeRunner {
                 .checkHelloText(false);
 
     }
+
+
+    @Test(retryAnalyzer = Retry.class)
+    @Severity(SeverityLevel.MINOR)
+    @Description("wish list")
+    public void wishlist() throws AWTException {
+        LogInLogOutStep step = new LogInLogOutStep();
+
+        step
+                .Login_2()
+                .emileInput_2(emaile_2)
+                .passwordInput_2(pass)
+                .authorizationButton()
+                .wishListButton()
+                .wishListName(nameForWishList)
+                .submitWishlist()
+                .removeWishList()
+                .logOutButton();
+
+    }
+
+
 }

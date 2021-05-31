@@ -5,7 +5,9 @@ import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 import org.testng.Assert;
 
-import static com.codeborne.selenide.Selenide.sleep;
+import java.awt.*;
+import java.awt.event.KeyEvent;
+
 
 public class LogInLogOutStep extends LogInLogOutPage {
     @Step("click login button two")
@@ -29,13 +31,12 @@ public class LogInLogOutStep extends LogInLogOutPage {
     @Step("click authorization Button ")
     public LogInLogOutStep authorizationButton() {
         authorizationButton.click();
-
         return this;
     }
 
     @Step("check hello text")
     public LogInLogOutStep checkHelloText(boolean helloText) {
-        Assert.assertEquals(checkHelloText.is(Condition.visible),helloText);
+        Assert.assertEquals(checkHelloText.is(Condition.visible), helloText);
         return this;
     }
 
@@ -45,4 +46,31 @@ public class LogInLogOutStep extends LogInLogOutPage {
         return this;
     }
 
+    @Step("click wish list button")
+    public LogInLogOutStep wishListButton() {
+        wishListButton.click();
+        return this;
+    }
+
+    @Step("write wish list name")
+    public LogInLogOutStep wishListName(String nameForWishList) {
+        wishListName.setValue(nameForWishList);
+        return this;
+    }
+
+    @Step("write wish list name")
+    public LogInLogOutStep submitWishlist() {
+        submitWishlist.click();
+        Assert.assertEquals(wishListBlock.is(Condition.visible), true);
+        return this;
+    }
+
+    @Step("write wish list name")
+    public LogInLogOutStep removeWishList() throws AWTException {
+        removeWishlist.click();
+        Robot robot = new Robot();
+        robot.keyPress(KeyEvent.VK_ENTER);
+        Assert.assertEquals(wishListBlock.is(Condition.visible),false);
+        return this;
+    }
 }
